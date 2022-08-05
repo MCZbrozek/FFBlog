@@ -1,17 +1,17 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom"
-import AllPosts from './components/AllPosts.js';
-import OnePost from './components/OnePost.js';
+import { Link } from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-    <Routes>
-      <Route component={AllPosts} path= "/" exact />
-      <Route component={OnePost} path= "/:slug" />      
-    </Routes>
-    </div>
-  );
+export default function App () {
+    return (
+        <div>
+            <h1>This is my app dammit!!</h1>
+            <nav style={{
+                borderBottom: "1px solid",
+                paddingBottom: "1rem"
+            }}>
+                <Link to="/Onepost">One post</Link> | {" "}
+                <Link to="/Allposts">All posts</Link>
+            </nav>
+        </div>
+    )
 }
-
-export default App;
