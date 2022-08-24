@@ -16,7 +16,7 @@ root.render(
         <Routes>
             <Route path="/" element={<App />} />
             <Route path="Allposts" element={<Allposts/>}/>
-            <Route path="Onepost" element={<Onepost/>} />
+            <Route path="/:slug" element={<Onepost/>} />
     </Routes>
     </BrowserRouter>
 );

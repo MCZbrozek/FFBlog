@@ -2,6 +2,7 @@ export default {
     name: 'post',
     type: 'document',
     title: 'post',
+    
     fields: [
       {
         name: 'title',
@@ -16,6 +17,11 @@ export default {
             type: 'author',
             }
         ],
+      },
+      {
+        name: 'body',
+        type: 'richText',
+        title: 'Body text',
       }
     ]
   }
