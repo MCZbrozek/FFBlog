@@ -1,3 +1,5 @@
+import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
+
 export default {
     name: 'post',
     type: 'document',
@@ -10,7 +12,17 @@ export default {
         title: 'Title',
       },
       {
+        name: 'slug',
+        type: 'slug',
+        title: 'Slug',
+        options: {
+            source: 'title',
+            maxLength: 96
+        }
+      },
+      {
         name: 'author',
+        title: 'Author',
         type: 'reference',
         to: [
             {

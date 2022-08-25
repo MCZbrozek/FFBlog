@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { SanityClient } from '@sanity/client';
+import {sanityClient} from '../client.js';
 
 export default function Onepost() {
     const [postData, setPostData] = useState(null)
     useEffect (() => {
-        SanityClient.fetch(
+        sanityClient.fetch(
             `*[slug.current == $slug]{
                 title,
                 slug,
