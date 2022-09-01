@@ -8,16 +8,16 @@ const builder = imageURLBuilder(sanityClient)
 function urlFor(source) {
     return builder.image(source)
 }
-export default function Onepost() {
-    const [postData, setPostData] = useState(null)
+export default function Author() {
+    const [authorData, setAuthorData] = useState(null)
     const { slug } = useParams()
 
     useEffect (() => {
         sanityClient.fetch(
-            `*[slug.current == $slug]{
-                title,
+            `*[_name == author]{
+                name,
                 slug,
-                mainImage{
+                image{
                     asset->{
                         _id,
                         url
@@ -29,22 +29,21 @@ export default function Onepost() {
             }`,
             { slug }
         )
-        .then((data) => setPostData(data[0]))
+        .then((data) => setAuthorData(data[0]))
         .catch(console.error);
     }, [slug] );
 
-    if (!postData) return <div>Loading...</div>
+    if (!authorData) return <div>Loading...</div>
 
     return (
         <div>
             <div>
-                <h2>{postData.title}</h2>
+                <h2>{authorData.name}</h2>
             </div>
-            <img src={urlFor(postData.authorImage).width(100).url()}
+            <img src={urlFor(authorData.authorImage).width(100).url()}
             alt= "Author is Mike"
             />
-            <h4>{postData.name}</h4>
-            <p>{postData.bodyText}</p>
+            <p>{authorData.name}</p>
         </div>
     )
 

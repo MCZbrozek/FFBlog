@@ -9,12 +9,25 @@ export default {
             title: 'Name'
         },
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'name',
+                maxLength: 96
+            }
+        },
+        {
             name: 'bio',
             type: 'richText'
         },
         {
-            name: 'figure',
-            type: 'image'
+            name: 'image',
+            type: 'Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
         }
     ]
 }

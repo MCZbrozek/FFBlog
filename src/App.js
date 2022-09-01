@@ -11,6 +11,7 @@ export default function App () {
             }}>
                 <Link to="/Onepost">One post</Link> | {" "}
                 <Link to="/Allposts">All posts</Link>
+                <Link to= "/Author">Author</Link>          
             </nav>
         </div>
     )

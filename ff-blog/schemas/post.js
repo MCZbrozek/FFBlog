@@ -33,7 +33,7 @@ export default {
       {
         name: 'body',
         type: 'richText',
-        title: 'Body text',
+        title: 'Body Text',
       }
     ]
   }
