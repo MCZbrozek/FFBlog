@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react';
-import { sanityClient } from '../client.js'
+import sanityClient  from '../client.js'
 import { Link } from 'react-router-dom'
 
 
@@ -11,9 +11,9 @@ export default function Allposts() {
             `*[_type == "post"]{
                 title,
                 slug,
-                mainImage{
-                    asset->{
-                        _id,
+                // mainImage{
+                //     asset->{
+                //         _id,
                         url
                     }
                 }
