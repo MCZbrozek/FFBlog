@@ -10,18 +10,13 @@ export default function Allposts() {
         sanityClient.fetch(
             `*[_type == "post"]{
                 title,
-                slug,
-                // mainImage{
-                //     asset->{
-                //         _id,
-                        url
-                    }
-                }
+                slug
             }`
         )
         .then((data) => setAllPosts(data))
         .catch(console.error);
     }, []);
+    console.log(allPostsData)
 
     return (
     <div>
@@ -32,10 +27,10 @@ export default function Allposts() {
             allPostsData.map((post, index) => (
                 <Link to={'/' + post.slug.current} key={post.slug.current}>
                     <span key={index}>
-                        <img
+                        {/* <img
                         src={post.mainImage.asset.url}
                         alt="main hero image for our blog post"
-                        />
+                        /> */}
                         <span>
                             <h2>{post.title}</h2>
                         </span>

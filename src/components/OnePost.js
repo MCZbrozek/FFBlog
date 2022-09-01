@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import sanityClient from '../client.js';
 // import BlockContent from '@sanity/block-content-to-react';
-// import imageURLBuilder from '@sanity/image-url'
+import imageURLBuilder from '@sanity/image-url'
 
+const builder = imageURLBuilder(sanityClient)
+function urlFor(source) {
+    return builder.image(source)
+}
 export default function Onepost() {
     const [postData, setPostData] = useState(null)
     const { slug } = useParams()
@@ -36,6 +40,10 @@ export default function Onepost() {
             <div>
                 <h2>{postData.title}</h2>
             </div>
+            <img src={urlFor(postData.authorImage).width(100).url()}
+            alt= "Author is Mike"
+            />
+            <h4>{postData.name}</h4>
         </div>
     )
 
