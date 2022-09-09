@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
 import sanityClient from '../client.js';
 // import BlockContent from '@sanity/block-content-to-react';
 import imageURLBuilder from '@sanity/image-url'
@@ -10,14 +9,13 @@ function urlFor(source) {
 }
 export default function Author() {
     const [authorData, setAuthorData] = useState(null)
-    const { slug } = useParams()
-
+   
     useEffect (() => {
         sanityClient.fetch(
-            `*[_name == author]{
-                name,
+            `*[_type == "author"]{
+                title,
                 slug,
-                image{
+                mainImage{
                     asset->{
                         _id,
                         url
@@ -26,15 +24,14 @@ export default function Author() {
                 body,
                 "name": author->name,
                 "authorImage":author->image
-            }`,
-            { slug }
+            }`
         )
-        .then((data) => setAuthorData(data[0]))
+        .then((data) => setAuthorData(data))
         .catch(console.error);
-    }, [slug] );
+    }, [] );
 
     if (!authorData) return <div>Loading...</div>
-
+    console.log (authorData)
     return (
         <div>
             <div>
@@ -43,7 +40,7 @@ export default function Author() {
             <img src={urlFor(authorData.authorImage).width(100).url()}
             alt= "Author is Mike"
             />
-            <p>{authorData.name}</p>
+            <h4>{authorData.name}</h4>
         </div>
     )
 

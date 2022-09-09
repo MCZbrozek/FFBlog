@@ -10,8 +10,8 @@ export default function App () {
                 paddingBottom: "1rem"
             }}>
                 <Link to="/Onepost">One post</Link> | {" "}
-                <Link to="/Allposts">All posts</Link>
-                <Link to= "/Author">Author</Link>          
+                <Link to="/Allposts">All posts</Link> | {" "}
+                <Link to= "/author">Author</Link>          
             </nav>
         </div>
     )
