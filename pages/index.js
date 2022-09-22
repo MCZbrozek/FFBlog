@@ -2,7 +2,6 @@ import Link from 'next/link'
 import groq from 'groq'
 import client from '../src/client.js'
 
-
 const Index = ({posts}) => {
     return (
         <div>

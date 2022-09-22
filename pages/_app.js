@@ -1,15 +1,13 @@
 import Head from "next/head"
 import React from "react"
+import Layout from "../src/components/Layout"
 
 function MyApp({ Component, pageProps }) {
     return (
-        <React.Fragment>
-            <Head>
-                <meta name="theme color" content="#3c1742" />
-            </Head>
+        <Layout>
             <Component {...pageProps} />
-        </React.Fragment>
-    )
+        </Layout>
+           )
 }
 
 export default MyApp
