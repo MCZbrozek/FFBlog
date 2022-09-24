@@ -2,11 +2,17 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 
 const navigationRoutes = ['home', 'about', 'posts', 'contact']
+const navBarStyle = {
+    backgroundColor: "red",
+    color: "white",
+    width: "100%",
+    height: "60px"
+}
 
 export default function Navbar() {
     const router = useRouter()
     return (
-        <nav className="nav_container">
+        <nav className="nav_container" style={navBarStyle}>
             {navigationRoutes.map((singleRoute) => {
                 return (
                     <NavigationLink
