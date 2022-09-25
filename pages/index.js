@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import groq from 'groq'
 import client from '../src/client.js'
+import Layout from '../src/components/Layout.jsx'
 
 const Index = ({posts}) => {
     return (
         <div>
-           <h1> Welcome to the Feeble Minded Footbal Fantasy Home! </h1>
+           <Layout> Welcome to the Feeble Minded Footbal Fantasy Home! </Layout>
            {posts.length > 0 && posts.map(
             ({ _id, title = '', slug = ''}) => slug && (
                 <li key={_id}>

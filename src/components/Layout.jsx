@@ -7,12 +7,19 @@ const layoutstyle = {
     width: "100%"
 }
 
+const contentStyle = {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column"
+}
+
 export default function Layout({ children }) {
     
     return (
         <>
-        <Navbar />
         <div className="Layout" style={layoutstyle}>
+        <Navbar />
+        
         <div className="Content" style={contentStyle}>{children}</div>
         {/* Footer */}
         {/* You can add more stuff here later */}

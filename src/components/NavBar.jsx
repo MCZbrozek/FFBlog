@@ -3,8 +3,8 @@ import Link from "next/link"
 
 const navigationRoutes = ['home', 'about', 'posts', 'contact']
 const navBarStyle = {
-    backgroundColor: "red",
-    color: "white",
+    backgroundColor: "#52673C",
+    color: "#D5D5D3",
     width: "100%",
     height: "60px"
 }
