@@ -1,18 +1,14 @@
 import { useRouter } from "next/router"
 import Link from "next/link"
+import styles from "../../styles/Navbar.module.scss"
 
 const navigationRoutes = ['home', 'about', 'posts', 'contact']
-const navBarStyle = {
-    backgroundColor: "#52673C",
-    color: "#D5D5D3",
-    width: "100%",
-    height: "60px"
-}
+
 
 export default function Navbar() {
     const router = useRouter()
     return (
-        <nav className="nav_container" style={navBarStyle}>
+        <nav className={styles.Navbar} >
             {navigationRoutes.map((singleRoute) => {
                 return (
                     <NavigationLink

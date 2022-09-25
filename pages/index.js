@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import groq from 'groq'
 import client from '../src/client.js'
-import Layout from '../src/components/Layout.jsx'
+import Layout from '../src/components/Layout.js'
 
 const Index = ({posts}) => {
     return (

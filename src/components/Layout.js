@@ -1,26 +1,22 @@
 import Navbar from "./Navbar"
+import Head from "next/head"
 
-const layoutstyle = {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    width: "100%"
-}
+import styles from "../../styles/Layout.module.scss"
 
-const contentStyle = {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column"
-}
 
 export default function Layout({ children }) {
     
     return (
         <>
-        <div className="Layout" style={layoutstyle}>
+        <div className={styles.Layout}>
+            <Head>
+                <title>
+                    FEEBLEMINDED
+                </title>
+                </Head>
         <Navbar />
         
-        <div className="Content" style={contentStyle}>{children}</div>
+        <div className={styles.Content}>{children}</div>
         {/* Footer */}
         {/* You can add more stuff here later */}
         </div>
