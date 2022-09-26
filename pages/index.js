@@ -6,7 +6,7 @@ import Layout from '../src/components/Layout.js'
 const Index = ({posts}) => {
     return (
         <div>
-           <Layout> Welcome to the Feeble Minded Footbal Fantasy Home! </Layout>
+           <h1> Welcome to the Feeble Minded Football Fantasy Home! </h1>
            {posts.length > 0 && posts.map(
             ({ _id, title = '', slug = ''}) => slug && (
                 <li key={_id}>
