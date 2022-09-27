@@ -1,6 +1,6 @@
 import Layout from "../src/components/Layout";
 
 const AboutView = props => 
-<Layout>{`About View`}</Layout>
+<div> About </div>
 
 export default AboutView
