@@ -1,5 +1,6 @@
-import Navbar from "./Navbar"
 import Head from "next/head"
+import Navbar from "./Navbar"
+import Header from "./Header"
 
 import styles from "../../styles/Layout.module.scss"
 import indexStyles from "../../styles/Index.module.scss"
@@ -20,7 +21,8 @@ const Layout = props => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
                 </Head>
-        <Navbar appTitle={appTitle} navButtons={navButtons}/>
+        <Header/>
+        <Navbar navButtons={navButtons}/>
 
         
         <div className={styles.Content}>{props.children}</div>

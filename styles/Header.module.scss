@@ -1,0 +1,23 @@
+@import "./themes/_theme.module";
+
+.Header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height:50px;
+    width: 100%;
+
+    padding: 0 20px;
+
+    font-family: $logo-font;
+    font-size: 24px;
+    font-weight: bold;
+    color: $secondary;
+    text-transform: uppercase;
+
+    background: $primart-light;
+
+    cursor: pointer;
+
+}

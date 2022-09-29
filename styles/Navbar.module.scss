@@ -1,4 +1,4 @@
-@import "./themes/theme.module";
+@import "./themes/_theme.module";
 
 .Navbar {
     display: flex;
@@ -7,12 +7,12 @@
 
     height: 60px;
     width:100%;
-    padding: 10px 0;
+    padding: 5px 0;
 
-    font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-family: $core-font;
+    font-size: 22px;
     font-weight: bold;
-    color: white;
+    color: $on-primary-light;
     text-transform: uppercase;
 
     background: #52673C;
@@ -26,6 +26,6 @@
     }
 
     .active {
-        color: navajowhite;
+        color: $highlight;
     }
 }
