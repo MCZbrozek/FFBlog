@@ -5,6 +5,8 @@ import Layout from '../src/components/Layout.js'
 
 const Index = ({posts}) => {
     return (
+        <>
+        <Layout>
         <div>
            <h1> Welcome to the Feeble Minded Football Fantasy Home! </h1>
            {posts.length > 0 && posts.map(
@@ -17,6 +19,8 @@ const Index = ({posts}) => {
             )
            )}
         </div>
+        </Layout>
+        </>
     )
 }
 
