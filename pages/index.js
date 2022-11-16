@@ -2,6 +2,7 @@ import Link from 'next/link'
 import groq from 'groq'
 import client from '../src/client.js'
 import Layout from '../src/components/Layout.js'
+import PostLinks from '../src/components/Postlinks.js'
 
 const Index = ({posts}) => {
     return (
@@ -28,9 +29,7 @@ export async function getStaticProps() {
     const posts = await client.fetch(groq`
     *[_type == "post"] `)
     return {
-        props: {
-            posts
-        }
+        props: { posts }
     }
 }
 

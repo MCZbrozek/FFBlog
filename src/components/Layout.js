@@ -16,7 +16,7 @@ const Layout = props => {
         <div className={styles.Layout}>
             <Head>
                 <title>
-                🏈 Feeble Minded FF
+                    {appTitle}
                 </title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />

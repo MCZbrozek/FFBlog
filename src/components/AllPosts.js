@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import sanityClient  from '../client.js'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
+
 
 
 export default function Allposts() {

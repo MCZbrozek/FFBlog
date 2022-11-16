@@ -2,6 +2,7 @@ import groq from 'groq'
 import imageURLBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import client from '../../src/client.js'
+import styles from '../../styles/Posts.module.scss'
 
 function urlFor (source) {
     return imageURLBuilder (client).image(source)
@@ -14,10 +15,10 @@ const ptComponents = {
                 return null
             }
             return (
-                <img
+                <img className={styles.mainImage}
                 alt={value.alt || ''}
                 loading="lazy"
-                src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+                src={urlFor(value)}
                 />
             )
         }
@@ -32,12 +33,11 @@ const Post = ({post}) => {
         body
     } = post
     return (
-        <article>
+        <article className={styles.main}>
             <h1>{title}</h1>
-            <span> By {name} </span>
             {authorImage && (
                 <div>
-                    <img
+                    <img 
                     src={urlFor(authorImage)
                     .width(100)
                     .url()
@@ -45,7 +45,8 @@ const Post = ({post}) => {
                     />
                 </div>
             )}
-            <PortableText
+            <span> By: {name} </span>
+            <PortableText className={styles.body}
             value = {body}
             components={ptComponents}
             />
